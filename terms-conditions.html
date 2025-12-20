@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions - Eleva Couture</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
+
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --accent: #d4af37;
+      --light: #f8f8f8;
+      --gray: #666;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      background: white;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    .terms-hero {
+      margin-top: 100px;
+      padding: 120px 0 80px;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .terms-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .last-updated {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    .terms-content {
+      padding: 80px 0 120px;
+    }
+
+    .terms-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .terms-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .terms-section h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 35px;
+      background: var(--accent);
+      border-radius: 10px;
+    }
+
+    .terms-section p,
+    .terms-section li {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .terms-section ul {
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .terms-section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .terms-section ul li::marker {
+      color: var(--accent);
+    }
+
+    .highlight {
+      background: #fff9e6;
+      padding: 2rem;
+      border-left: 5px solid var(--accent);
+      margin: 2.5rem 0;
+      font-style: italic;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+
+    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; }
+      .nav-links.active { left: 0; }
+      .terms-hero h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Eleva<span>Couture</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#men">Men</a></li>
+        <li><a href="index.html#women">Women</a></li>
+        <li><a href="index.html#products">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="terms-hero">
+    <div class="container">
+      <h1>Terms & Conditions</h1>
+      <p>By using our website and purchasing from Eleva Couture, you agree to these terms.</p>
+      <div class="last-updated">Last Updated: December 20, 2025</div>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="terms-content">
+    <div class="container">
+      <div class="terms-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing elevacouture.com or purchasing any products, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>2. Use of Website</h2>
+        <p>You must be at least 18 years old to place an order. You agree to provide accurate and complete information during registration and checkout.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>3. Orders & Payment</h2>
+        <p>All prices are in Indian Rupees (INR) and include applicable taxes. We reserve the right to accept or reject any order. Payment is processed securely through trusted gateways.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>4. Shipping & Delivery</h2>
+        <p>We ship across India and select international locations. Delivery times are estimates. Risk of loss transfers to you upon delivery. Custom duties (if applicable) are your responsibility.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>5. Returns & Exchanges</h2>
+        <p>Items may be returned or exchanged within 15 days of delivery if unused and in original condition with tags. Custom-made or altered items are non-returnable. Shipping costs for returns are borne by the customer unless the item is defective.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>6. Product Information</h2>
+        <p>We make every effort to display colors and details accurately, but slight variations may occur due to screen settings or fabric batches. All measurements are approximate.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>7. Intellectual Property</h2>
+        <p>All content on this website (images, text, designs) is owned by Eleva Couture and protected by copyright. Unauthorized use is prohibited.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>8. Limitation of Liability</h2>
+        <p>Eleva Couture shall not be liable for any indirect or consequential damages arising from the use of our products or website.</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>9. Governing Law</h2>
+        <p>These terms are governed by the laws of India. Any disputes shall be resolved in the courts of New Delhi.</p>
+      </div>
+
+      <div class="highlight">
+        <strong>We reserve the right to modify these Terms & Conditions at any time. Continued use of the website after changes constitutes acceptance of the updated terms.</strong>
+      </div>
+
+      <div class="terms-section">
+        <h2>10. Contact Us</h2>
+        <p>For questions about these Terms & Conditions, please contact:</p>
+        <p><strong>Email:</strong> support@elevacouture.com<br>
+        <strong>Phone:</strong> +91 98765 43210<br>
+        <strong>Address:</strong> 123 Fashion Street, Connaught Place, New Delhi 110001, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Eleva Couture</h3>
+        <p>Timeless garments for the modern wardrobe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#men">Men</a>
+        <a href="index.html#women">Women</a>
+        <a href="index.html#products">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@elevacouture.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+      <p>© 2025 Eleva Couture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>

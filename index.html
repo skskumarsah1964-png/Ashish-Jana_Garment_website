@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eleva Couture - Premium Garments for Men & Women</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon (you can replace with your own) -->
+  <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
+
+  <style>
+    :root {
+      --primary: #1a1a1a;     /* Deep black for elegance */
+      --accent: #d4af37;      /* Gold accent for premium feel */
+      --light: #f8f8f8;
+      --gray: #666;
+      --dark-gray: #333;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      background: white;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      margin-top: 100px;
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://53.fs1.hubspotusercontent-na1.net/hubfs/53/fashion-website-design-6-20240815-8665961.webp') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover { background: #b8972b; }
+
+    /* Categories */
+    .categories {
+      padding: 100px 0;
+      background: var(--light);
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 3rem;
+    }
+
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+      border-radius: 0;
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .cat-card:hover img { transform: scale(1.1); }
+
+    .cat-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 3rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      text-align: center;
+    }
+
+    .cat-overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Products */
+    .products {
+      padding: 100px 0;
+    }
+
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .prod-card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: 0.4s;
+    }
+
+    .prod-card:hover { transform: translateY(-10px); }
+
+    .prod-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .prod-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .prod-info h4 { margin-bottom: 0.5rem; }
+
+    .price { font-weight: 600; color: var(--accent); }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+
+    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; color: var(--primary); }
+      .nav-links.active { left: 0; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Eleva<span>Couture</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#products">Shop All</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Timeless Elegance Redefined</h1>
+      <p>Premium garments crafted with precision for the modern man and woman.</p>
+      <button class="btn-primary">Shop Collection</button>
+    </div>
+  </section>
+
+<grok-card data-id="71f113" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="8b97ee" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="665dfc" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="8ff163" data-type="image_card"></grok-card>
+
+
+  <!-- Categories -->
+  <section class="categories" id="men">
+    <div class="container">
+      <h2 class="section-title">Men's Collection</h2>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <img src="https://www.shutterstock.com/image-photo/elegant-mens-outfit-stylish-suit-260nw-2599348315.jpg" alt="Men's Collection">
+          <div class="cat-overlay">
+            <h3>Men's Wear</h3>
+            <p>Sophisticated shirts, jackets, and tailored essentials.</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <img src="https://9f8e62d4.delivery.rocketcdn.me/wp-content/uploads/2024/12/shirt-jacket-overshirt-on-the-hanger.jpg" alt="Men's Premium">
+          <div class="cat-overlay">
+            <h3>Premium Line</h3>
+            <p>Luxury fabrics for the discerning gentleman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<grok-card data-id="5a38b6" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="d40c38" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="428462" data-type="image_card"></grok-card>
+
+
+  <section class="categories" id="women">
+    <div class="container">
+      <h2 class="section-title">Women's Collection</h2>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <img src="https://www.shutterstock.com/image-photo/women-modern-fashion-clothes-accessories-260nw-736058299.jpg" alt="Women's Collection">
+          <div class="cat-overlay">
+            <h3>Women's Wear</h3>
+            <p>Elegant dresses, blouses, and timeless pieces.</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <img src="https://www.rollingstone.com/wp-content/uploads/2024/01/Best-Sites-for-Womenswear-15-Gap-1.jpg" alt="Women's Premium">
+          <div class="cat-overlay">
+            <h3>Premium Line</h3>
+            <p>Exquisite craftsmanship for modern femininity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<grok-card data-id="7163d4" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="bb639c" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="1c2f4e" data-type="image_card"></grok-card>
+
+
+  <!-- Featured Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">Featured Garments</h2>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <img src="https://www.shutterstock.com/image-photo/stylish-mens-outfit-flat-lay-260nw-2590931969.jpg" alt="Men's Shirt">
+          <div class="prod-info">
+            <h4>Classic Oxford Shirt</h4>
+            <p class="price">₹4,999</p>
+          </div>
+        </div>
+        <div class="prod-card">
+          <img src="https://brandsgateway.com/app/uploads/2024/10/product-display.png" alt="Men's Jacket">
+          <div class="prod-info">
+            <h4>Tailored Blazer</h4>
+            <p class="price">₹12,999</p>
+          </div>
+        </div>
+        <div class="prod-card">
+          <img src="https://assets.vogue.com/photos/67891ead87b0c1eec7abca20/master/w_2560%2Cc_limit/image.png" alt="Women's Dress">
+          <div class="prod-info">
+            <h4>Silk Evening Dress</h4>
+            <p class="price">₹15,999</p>
+          </div>
+        </div>
+        <div class="prod-card">
+          <img src="https://www.rollingstone.com/wp-content/uploads/2024/01/Best-Sites-for-Womenswear-1-Amazon-1.jpg?w=1024" alt="Women's Blouse">
+          <div class="prod-info">
+            <h4>Chiffon Blouse</h4>
+            <p class="price">₹6,999</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<grok-card data-id="efca44" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="c47af5" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="d9f3c0" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="780d3b" data-type="image_card"></grok-card>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Eleva Couture</h3>
+        <p>Timeless garments for the modern wardrobe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#products">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="./privacy_policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@elevacouture.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+      <p>© 2025 Eleva Couture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>

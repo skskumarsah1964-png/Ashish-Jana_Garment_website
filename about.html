@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Eleva Couture</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
+
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --accent: #d4af37;
+      --light: #f8f8f8;
+      --gray: #666;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      background: white;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    .about-hero {
+      margin-top: 100px;
+      padding: 120px 0;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--gray);
+    }
+
+    .story-section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .story-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-text p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .story-img img {
+      width: 100%;
+      border-radius: 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .value-card i {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+
+    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; }
+      .nav-links.active { left: 0; }
+      .story-grid { grid-template-columns: 1fr; text-align: center; }
+      .about-hero h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Eleva<span>Couture</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#men">Men</a></li>
+        <li><a href="index.html#women">Women</a></li>
+        <li><a href="index.html#products">Shop</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>About Eleva Couture</h1>
+      <p>Where timeless craftsmanship meets contemporary elegance. We create premium garments that empower confidence and style for the modern man and woman.</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <!-- <section class="story-section">
+    <div class="container">
+      <h2 class="section-title">Our Journey</h2>
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>Crafted with Passion Since 2018</h2>
+          <p>Eleva Couture was founded with a vision to redefine luxury fashion in India. Starting as a small atelier in Delhi, we combined traditional tailoring techniques with modern design sensibilities.</p>
+          <p>Today, we proudly serve discerning clients across the country, offering bespoke and ready-to-wear collections that stand the test of time.</p>
+          <p>Every piece is meticulously crafted using the finest fabrics sourced globally, ensuring unparalleled quality and comfort.</p>
+        </div>
+        <div class="story-img">
+
+<grok-card data-id="f21c82" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="b4e832" data-type="image_card"></grok-card>
+
+        </div>
+      </div>
+
+      <div class="story-grid" style="flex-direction: row-reverse;">
+        <div class="story-text">
+          <h2>The Art of Design</h2>
+          <p>Our design process begins with inspiration from global trends, refined through countless sketches and prototypes. Each collection tells a story of sophistication and innovation.</p>
+          <p>We believe in slow fashion – creating pieces that transcend seasons and become wardrobe staples.</p>
+        </div>
+        <div class="story-img">
+
+<grok-card data-id="f3a980" data-type="image_card"></grok-card>
+
+        </div>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>Master Craftsmanship</h2>
+          <p>Behind every Eleva garment are skilled artisans who bring designs to life with precision and care. From pattern making to final stitching, excellence is our standard.</p>
+        </div>
+        <div class="story-img">
+
+<grok-card data-id="110620" data-type="image_card"></grok-card>
+
+        </div>
+      </div>
+
+      <div class="story-grid" style="flex-direction: row-reverse;">
+        <div class="story-text">
+          <h2>Our Showroom Experience</h2>
+          <p>Visit our flagship store for a personalized shopping experience where style meets exceptional service.</p>
+        </div>
+        <div class="story-img">
+
+<grok-card data-id="dfb3a4" data-type="image_card"></grok-card>
+
+
+
+<grok-card data-id="0c112b" data-type="image_card"></grok-card>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Values -->
+  <section class="story-section" style="background: var(--light);">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <i class="fas fa-gem"></i>
+          <h3>Quality First</h3>
+          <p>Uncompromising standards in materials and craftsmanship.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Sustainable Practices</h3>
+          <p>Ethical sourcing and responsible production.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-users"></i>
+          <h3>Customer Centric</h3>
+          <p>Personalized service and complete satisfaction.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-infinity"></i>
+          <h3>Timeless Design</h3>
+          <p>Creating pieces that endure beyond trends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Eleva Couture</h3>
+        <p>Timeless garments for the modern wardrobe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#men">Men</a>
+        <a href="index.html#women">Women</a>
+        <a href="index.html#products">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@elevacouture.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+      <p>© 2025 Eleva Couture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>
