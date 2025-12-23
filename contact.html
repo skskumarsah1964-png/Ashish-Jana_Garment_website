@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - Desi Dhaaga</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
@@ -22,7 +25,11 @@
       --gray: #666;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -40,10 +47,11 @@
 
     header {
       position: fixed;
-      top: 0; width: 100%;
+      top: 0;
+      width: 100%;
       background: white;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
@@ -60,7 +68,9 @@
       color: var(--primary);
     }
 
-    .logo span { color: var(--accent); }
+    .logo span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -76,9 +86,15 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active {
+      color: var(--accent);
+    }
 
-    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
 
     .contact-hero {
       margin-top: 100px;
@@ -104,6 +120,23 @@
       padding: 100px 0;
     }
 
+    .title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -113,54 +146,60 @@
     .contact-info h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
-    .info-item {
+    .info-box {
       display: flex;
       align-items: flex-start;
       gap: 1.5rem;
       margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .info-icon {
+    .info-box i {
       font-size: 1.8rem;
       color: var(--accent);
       width: 60px;
       height: 60px;
-      background: white;
+      background: #fff9e6;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(212,175,55,0.2);
     }
 
-    .info-details h4 {
+    .info-box h4 {
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
     }
 
-    .info-details p {
+    .info-box p {
       color: var(--gray);
+      margin: 0;
     }
 
-    .store-hours {
+    .business-hours {
       background: white;
       padding: 2rem;
-      border-radius: 0;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
-    .store-hours h3 {
+    .business-hours h3 {
       margin-bottom: 1.5rem;
       color: var(--accent);
+      font-size: 1.6rem;
     }
 
     .contact-form {
       background: white;
       padding: 3rem;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
@@ -170,42 +209,64 @@
       margin-bottom: 2rem;
     }
 
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
+    .contact-form label {
       display: block;
       margin-bottom: 0.8rem;
       font-weight: 500;
+      font-size: 1.05rem;
     }
 
-    .form-group input,
-    .form-group textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 1rem;
       border: 1px solid #ddd;
+      border-radius: 8px;
       font-size: 1rem;
+      margin-bottom: 1.5rem;
       transition: border 0.3s;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
+    .contact-form input:focus,
+    .contact-form textarea:focus {
       outline: none;
       border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
     }
 
-    textarea { height: 150px; resize: vertical; }
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .checkbox-area {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      color: var(--gray);
+    }
+
+    .checkbox-area input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
 
     .btn-submit {
       background: var(--accent);
       color: var(--primary);
       padding: 1rem 3rem;
       border: none;
+      border-radius: 8px;
       font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+      width: 100%;
     }
 
     .btn-submit:hover {
@@ -225,27 +286,62 @@
       margin-bottom: 3rem;
     }
 
-    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+    .footer-col h3 {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
 
-    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
 
-    .footer-col a:hover { color: var(--accent); }
+    .footer-col a:hover {
+      color: var(--accent);
+    }
 
     @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; }
-      .nav-links.active { left: 0; }
-      .contact-wrapper { grid-template-columns: 1fr; }
-      .contact-hero h1 { font-size: 2.8rem; }
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero h1,
+      .title {
+        font-size: 2.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <header>
     <div class="container navbar">
-      <div class="logo">Eleva<span>Couture</span></div>
+      <div class="logo">Desi<span>Dhaaga</span></div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#men">Men</a></li>
@@ -258,89 +354,79 @@
     </div>
   </header>
 
-  <!-- Contact Hero -->
-  <section class="contact-hero">
-    <div class="container">
-      <h1>Get in Touch</h1>
-      <p>We'd love to hear from you. Whether you have a question about our collections, sizing, or need styling advice, our team is here to help.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
+  <!-- Contact Section (New Form Integrated) -->
   <section class="contact-section">
     <div class="container">
+      <h1 class="title">Get in Touch</h1>
+      <p class="subtitle">Have questions about our collections or need assistance? Contact Desi Dhaaga today.</p>
+
       <div class="contact-wrapper">
-        <!-- Left: Contact Info -->
+
+        <!-- LEFT SIDE INFO -->
         <div class="contact-info">
           <h2>Contact Information</h2>
 
-          <div class="info-item">
-            <div class="info-icon"><i class="fas fa-phone"></i></div>
-            <div class="info-details">
+          <div class="info-box">
+            <i class="fas fa-phone"></i>
+            <div>
               <h4>Phone</h4>
-              <p>+91 98765 43210</p>
+              <p>+91-8006700065</p>
             </div>
           </div>
 
-          <div class="info-item">
-            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-            <div class="info-details">
+          <div class="info-box">
+            <i class="fas fa-envelope"></i>
+            <div>
               <h4>Email</h4>
-              <p>info@DesiDhaaga.com</p>
-              <p>support@DesiDhaaga.com</p>
+              <p>info@vasusons.co.in</p>
             </div>
           </div>
 
-          <div class="info-item">
-            <div class="info-icon"><i class="fas fa-location-dot"></i></div>
-            <div class="info-details">
-              <h4>Showroom Address</h4>
-              <p>123 Fashion Street,<br>
-                 Connaught Place,<br>
-                 New Delhi 110001,<br>
-                 India</p>
+          <div class="info-box">
+            <i class="fas fa-location-dot"></i>
+            <div>
+              <h4>Address</h4>
+              <p>0498, RAYPURAM MAHAVAN LOHWAN, Mathura,<br>
+                Uttar Pradesh 281001<br>
+                India</p>
             </div>
           </div>
 
-          <div class="store-hours">
-            <h3>Store Hours</h3>
-            <p><strong>Monday - Saturday:</strong> 11:00 AM – 8:00 PM</p>
-            <p><strong>Sunday:</strong> 12:00 PM – 6:00 PM</p>
+          <div class="business-hours">
+            <h3>Business Hours</h3>
+            <p><strong>Monday - Friday:</strong> 9:00 AM – 6:00 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM – 4:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
           </div>
         </div>
 
-        <!-- Right: Contact Form -->
+        <!-- RIGHT SIDE FORM -->
         <div class="contact-form">
-          <h2>Send Us a Message</h2>
-          <form action="#" method="POST">
-            <div class="form-group">
-              <label>Full Name *</label>
-              <input type="text" name="name" required placeholder="Your full name">
-            </div>
+          <h2>Send us a Message</h2>
 
-            <div class="form-group">
-              <label>Email Address *</label>
-              <input type="email" name="email" required placeholder="your@email.com">
-            </div>
+          <form  id="contactForm">
+            <label>Full Name *</label>
+            <input type="text" name="name" required placeholder="Enter your full name">
 
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" name="phone" placeholder="+91 _________">
-            </div>
+            <label>Email Address *</label>
+            <input type="email" name="email" required placeholder="Enter your email address">
 
-            <div class="form-group">
-              <label>Subject *</label>
-              <input type="text" name="subject" required placeholder="e.g. Inquiry about Men's Collection">
-            </div>
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter your phone number">
 
-            <div class="form-group">
-              <label>Message *</label>
-              <textarea name="message" required placeholder="How can we assist you today?"></textarea>
-            </div>
+            <label>Message *</label>
+            <textarea name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
+
+            <label class="checkbox-area">
+              <input type="checkbox" name="rcs_optin">
+              I agree and authorize to call/send SMS/RCS/Promotional messages.  
+              This will override DND/NDNC registry. *
+            </label>
 
             <button type="submit" class="btn-submit">Send Message</button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
@@ -366,8 +452,8 @@
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-envelope"></i> info@DesiDhaaga.com</p>
+        <p><i class="fas fa-phone"></i> +91 80067 00065</p>
+        <p><i class="fas fa-envelope"></i> info@vasusons.co.in</p>
       </div>
     </div>
     <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
@@ -384,4 +470,5 @@
     });
   </script>
 </body>
+
 </html>
