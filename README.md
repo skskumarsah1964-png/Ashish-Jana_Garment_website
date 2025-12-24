@@ -10,7 +10,7 @@ The website features:
 - Easy navigation to explore collections for men and women.
 - Sections for featured collections, shop, about the brand, and contact.
 
-Website: www.elevacouture.com (or your live domain)
+Website: https://www.srinikajanatextiles.com/
 
 ## Features
 - Fully responsive design optimized for desktop, tablet, and mobile devices.
