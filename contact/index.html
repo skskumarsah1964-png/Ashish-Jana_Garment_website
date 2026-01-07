@@ -274,33 +274,35 @@
       background: #b8972b;
     }
 
-    footer {
-      background: var(--primary);
-      color: white;
-      padding: 80px 0 30px;
+    /* Thank You Message - Hidden by default */
+    .thank-you-message {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #ecfdf5;
+      border: 2px solid #10b981;
+      border-radius: 12px;
+      margin: 3rem auto;
+      max-width: 800px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-col h3 {
+    .thank-you-message i {
+      font-size: 5rem;
+      color: #10b981;
       margin-bottom: 1.5rem;
-      color: var(--accent);
     }
 
-    .footer-col a {
-      color: #ccc;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.8rem;
+    .thank-you-message h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #059669;
+      margin-bottom: 1rem;
     }
 
-    .footer-col a:hover {
-      color: var(--accent);
+    .thank-you-message p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
     }
 
     @media (max-width: 768px) {
@@ -344,24 +346,24 @@
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
       <div class="cart-icon">
-        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+        <a href="/cart.html" style="color: var(--primary); font-size: 1.8rem; position: relative;">
           <i class="fas fa-shopping-bag"></i>
           <span class="cart-count">0</span>
         </a>
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="/">Home</a></li>
-        <li><a href="/#men">Men</a></li>
-        <li><a href="/#women">Women</a></li>
+        <li><a href="/men/">Men</a></li>
+        <li><a href="/women/">Women</a></li>
         <li><a href="/#products">Shop</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="active">Contact</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
       </ul>
       <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
-  <!-- Contact Section (New Form Integrated) -->
+  <!-- Contact Section -->
   <section class="contact-section">
     <div class="container">
       <h1 class="title">Get in Touch</h1>
@@ -394,11 +396,8 @@
             <i class="fas fa-location-dot"></i>
             <div>
               <h4>Address</h4>
-              <p>GROUND FLOOR, NA, 160/1, <br>Unnamed Road, Palli Durga Mandir,
-                br>Silabai, Ghatal, Paschim Medinipur,
-                <br>West Bengal,
-                721212
-              </p>
+              <p>GROUND FLOOR, NA, 160/1, <br>Unnamed Road, Palli Durga Mandir,<br>Silabai, Ghatal, Paschim
+                Medinipur,<br>West Bengal, 721212</p>
             </div>
           </div>
 
@@ -411,75 +410,101 @@
         </div>
 
         <!-- RIGHT SIDE FORM -->
-        <div class="contact-form">
-          <h2>Send us a Message</h2>
+        <div class="contact-form" id="contactFormContainer">
+          <div id="formContent">
+            <h2>Send us a Message</h2>
 
-          <form id="contactForm">
-            <label>Full Name *</label>
-            <input type="text" name="name" required placeholder="Enter your full name">
+            <form id="contactForm">
+              <label>Full Name *</label>
+              <input type="text" name="name" required placeholder="Enter your full name">
 
-            <label>Email Address *</label>
-            <input type="email" name="email" required placeholder="Enter your email address">
+              <label>Email Address *</label>
+              <input type="email" name="email" required placeholder="Enter your email address">
 
-            <label>Phone Number</label>
-            <input type="text" name="phone" placeholder="Enter your phone number">
+              <label>Phone Number</label>
+              <input type="text" name="phone" placeholder="Enter your phone number">
 
-            <label>Message *</label>
-            <textarea name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
+              <label>Message *</label>
+              <textarea name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
 
-            <label class="checkbox-area">
-              <input type="checkbox" name="rcs_optin">
-              I agree and authorize to call/send SMS/RCS/Promotional messages.
-              This will override DND/NDNC registry. *
-            </label>
+              <label class="checkbox-area">
+                <input type="checkbox" name="rcs_optin">
+                I agree and authorize to call/send SMS/RCS/Promotional messages.<br>
+                This will override DND/NDNC registry. *
+              </label>
 
-            <button type="submit" class="btn-submit">Send Message</button>
-          </form>
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Thank You Message (Same Div Mein, Initially Hidden) -->
+          <div id="thankYouContent" style="display: none; text-align: center; padding: 2rem;">
+            <i class="fas fa-check-circle" style="font-size: 5rem; color: #10b981; margin-bottom: 1.5rem;"></i>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #059669; margin-bottom: 1rem;">Thank
+              You!</h2>
+            <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 1rem;">
+              Your message has been successfully sent.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--primary);">
+              We will get back to you within 24 hours via email or phone.
+            </p>
+            <a href="index.html"
+              style="display:inline-block; margin-top:2rem; background:var(--accent); color:var(--primary); padding:1rem 2.5rem; text-decoration:none; border-radius:8px; font-weight:600;">
+              Back to Home
+            </a>
+          </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <!-- Footer -->
+        <footer>
+          <div class="container footer-grid">
+            <div class="footer-col">
+              <h3>Srinikajana Textiles</h3>
+              <p>Timeless garments for the modern wardrobe.</p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <a href="/">Home</a>
+              <a href="/#men">Men</a>
+              <a href="/#women">Women</a>
+              <a href="/#products">Shop</a>
+            </div>
+            <div class="footer-col">
+              <h3>Legal</h3>
+              <a href="/privacy/">Privacy Policy</a>
+              <a href="/terms/">Terms & Conditions</a>
+            </div>
+            <div class="footer-col">
+              <h3>Contact</h3>
+              <p><i class="fas fa-phone"></i> +91 74074 95828</p>
+              <p><i class="fas fa-envelope"></i> ashish@srinikajanatextiles.com</p>
+            </div>
+          </div>
+          <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+            <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
+          </div>
+        </footer>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h3>Srinikajana Textiles</h3>
-        <p>Timeless garments for the modern wardrobe.</p>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <a href="/">Home</a>
-        <a href="/#men">Men</a>
-        <a href="/#women">Women</a>
-        <a href="/#products">Shop</a>
-      </div>
-      <div class="footer-col">
-        <h3>Legal</h3>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms & Conditions</a>
-      </div>
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <p><i class="fas fa-phone"></i> +91 74074 95828</p>
-        <p><i class="fas fa-envelope"></i> ashish@srinikajanatextiles.com</p>
-      </div>
-    </div>
-    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
-      <p>© 2025 Srinikajana Textiles. All rights reserved.</p>
-    </div>
-  </footer>
+        <script>
+          const hamburger = document.getElementById('hamburger');
+          const navLinks = document.getElementById('navLinks');
+          hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+          });
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-  </script>
-  <script src="/script.js"></script>
+          // Contact Form Submission - Same Div Mein Thank You
+          document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Form submit nahi hoga
+
+            // Hide form
+            document.getElementById('formContent').style.display = 'none';
+
+            // Show thank you message
+            document.getElementById('thankYouContent').style.display = 'block';
+          });
+        </script>
+        <script src="/script.js"></script>
 </body>
 
 </html>
