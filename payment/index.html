@@ -1,27 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Srinikajana Textiles</title>
-  <link rel="stylesheet" href="/style.css" />
-  <!-- Same head -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/style.css">
   <style>
+    :root {
+      --primary: #1a1a1a;
+      --accent: #d4af37;
+      --light: #f8f8f8;
+      --gray: #666;
+    }
+
     .checkout-form {
       max-width: 600px;
       margin: 150px auto;
       padding: 3rem;
       background: white;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 12px;
     }
-    .form-group { margin-bottom: 1.5rem; }
-    input, select { width: 100%; padding: 1rem; border: 1px solid #ddd; }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
     .btn-pay {
       background: var(--accent);
       color: var(--primary);
-      padding: 1rem;
+      padding: 1.2rem;
       width: 100%;
       border: none;
+      border-radius: 8px;
       font-size: 1.3rem;
+      font-weight: 600;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-pay:hover {
+      background: #b8972b;
+    }
+
+    /* Thank You Message (Hidden by default) */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      background: #ecfdf5;
+      border: 2px solid #10b981;
+      border-radius: 12px;
+      margin: 150px auto;
+      max-width: 700px;
+    }
+
+    .thank-you h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #059669;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .thank-you .order-note {
+      font-weight: 500;
+      color: var(--primary);
     }
   </style>
 </head>
@@ -31,39 +103,72 @@
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
       <div class="cart-icon">
-        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+        <a href="/cart.html" style="color: var(--primary); font-size: 1.8rem; position: relative;">
           <i class="fas fa-shopping-bag"></i>
           <span class="cart-count">0</span>
         </a>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/men/">Men</a></li>
         <li><a href="/women/">Women</a></li>
-        <li><a href="#products">Shop All</a></li>
+        <li><a href="/#products">Shop All</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
-      
       <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
-  <div class="checkout-form container">
-    <h1 style="text-align:center; margin-bottom:2rem;">Checkout</h1>
-    <form>
-      <div class="form-group"><input type="text" placeholder="Full Name" required></div>
-      <div class="form-group"><input type="email" placeholder="Email" required></div>
-      <div class="form-group"><input type="tel" placeholder="Phone" required></div>
-      <div class="form-group"><textarea placeholder="Address" rows="4" required></textarea></div>
-      <div class="form-group"><select><option>Cash on Delivery</option><option>UPI / Card (Coming Soon)</option></select></div>
+  <!-- Checkout Form -->
+  <div class="checkout-form container" id="checkoutForm">
+    <h1 style="text-align:center; margin-bottom:2rem; font-family:'Playfair Display';">Checkout</h1>
+    <form id="orderForm">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" placeholder="+91 _________" required>
+      </div>
+      <div class="form-group">
+        <label>Delivery Address *</label>
+        <textarea name="address" placeholder="Full address with pincode" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Payment Method</label>
+        <select name="payment">
+          <option>Cash on Delivery</option>
+          <option>UPI / Card (Coming Soon)</option>
+        </select>
+      </div>
       <button type="submit" class="btn-pay">Place Order</button>
     </form>
-    <p style="text-align:center; margin-top:2rem; color:var(--gray);">Your order will be confirmed via WhatsApp/Call.</p>
+    <p style="text-align:center; margin-top:2rem; color:var(--gray); font-size:0.95rem;">
+      Your order will be confirmed via WhatsApp/Call shortly.
+    </p>
+  </div>
+
+  <!-- Thank You Message (Initially Hidden) -->
+  <div class="thank-you container" id="thankYou">
+    <i class="fas fa-check-circle" style="font-size: 5rem; color: #10b981; margin-bottom: 1rem;"></i>
+    <h1>Thank You!</h1>
+    <p>Your order has been successfully placed.</p>
+    <p class="order-note">We will contact you shortly on WhatsApp/Call to confirm details and payment.</p>
+    <!-- <p>Order Reference: <strong>#ORD-${new Date().getTime().toString().slice(-6)}</strong></p> -->
+     <p>Order Reference: <strong id="orderRef">#ORD-XXXXXX</strong></p>
+    <a href="index.html" style="display:inline-block; margin-top:2rem; background:var(--accent); color:var(--primary); padding:1rem 2.5rem; text-decoration:none; border-radius:8px; font-weight:600;">
+      Continue Shopping
+    </a>
   </div>
 
   <!-- Footer -->
-    <footer>
+  <footer>
     <div class="container footer-grid">
       <div class="footer-col">
         <h3>Srinikajana Textiles</h3>
@@ -74,7 +179,7 @@
         <a href="/">Home</a>
         <a href="/men/">Men</a>
         <a href="/women/">Women</a>
-        <a href="#products">Shop All</a>
+        <a href="/#products">Shop All</a>
       </div>
       <div class="footer-col">
         <h3>Legal</h3>
@@ -91,7 +196,50 @@
       <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
     </div>
   </footer>
-   <script src="/script.js"></script>
-</body>
 
+  <script src="/script.js"></script>
+  <script>
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+    });
+
+    // Handle Place Order
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop actual form submission
+
+      // Hide form
+      document.getElementById('checkoutForm').style.display = 'none';
+
+      // Show thank you message
+      document.getElementById('thankYou').style.display = 'block';
+
+      // Optional: Clear cart after order
+      localStorage.removeItem('cart');
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+    });
+    // Thank You Message ke baad order reference generate karo
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Generate random 6-digit order number
+  const orderNumber = Math.floor(100000 + Math.random() * 900000);
+  document.getElementById('orderRef').textContent = `#ORD-${orderNumber}`;
+
+  // Hide form & show thank you
+  document.getElementById('checkoutForm').style.display = 'none';
+  document.getElementById('thankYou').style.display = 'block';
+
+  // Clear cart
+  localStorage.removeItem('cart');
+  if (typeof updateCartCount === 'function') {
+    updateCartCount();
+  }
+});
+  </script>
+</body>
 </html>
