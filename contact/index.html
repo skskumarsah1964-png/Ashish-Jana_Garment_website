@@ -7,9 +7,7 @@
   <title>Contact Us - Srinikajana Textiles</title>
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -26,11 +24,7 @@
       --gray: #666;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -69,9 +63,7 @@
       color: var(--primary);
     }
 
-    .logo span {
-      color: var(--accent);
-    }
+    .logo span { color: var(--accent); }
 
     .nav-links {
       display: flex;
@@ -87,15 +79,9 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent);
-    }
+    .nav-links a.active { color: var(--accent); }
 
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
 
     .contact-hero {
       margin-top: 100px;
@@ -202,6 +188,7 @@
       padding: 3rem;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      position: relative;
     }
 
     .contact-form h2 {
@@ -274,67 +261,38 @@
       background: #b8972b;
     }
 
-    /* Thank You Message - Hidden by default */
-    .thank-you-message {
+    /* Thank You Message inside same form div */
+    #thankYouContent {
       display: none;
       text-align: center;
-      padding: 4rem 2rem;
-      background: #ecfdf5;
-      border: 2px solid #10b981;
-      border-radius: 12px;
-      margin: 3rem auto;
-      max-width: 800px;
+      padding: 2rem 0;
     }
 
-    .thank-you-message i {
+    #thankYouContent i {
       font-size: 5rem;
       color: #10b981;
       margin-bottom: 1.5rem;
     }
 
-    .thank-you-message h2 {
+    #thankYouContent h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       color: #059669;
       margin-bottom: 1rem;
     }
 
-    .thank-you-message p {
+    #thankYouContent p {
       font-size: 1.2rem;
       color: var(--gray);
       margin-bottom: 1.5rem;
     }
 
     @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 3rem;
-        transition: 0.4s;
-      }
-
-      .nav-links.active {
-        left: 0;
-      }
-
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-hero h1,
-      .title {
-        font-size: 2.8rem;
-      }
+      .hamburger { display: block; }
+      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; }
+      .nav-links.active { left: 0; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .contact-hero h1, .title { font-size: 2.8rem; }
     }
   </style>
 </head>
@@ -353,25 +311,22 @@
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="/">Home</a></li>
-        <li><a href="/men/">Men</a></li>
-        <li><a href="/women/">Women</a></li>
+        <li><a href="/men">Men</a></li>
+        <li><a href="/women">Women</a></li>
         <li><a href="/#products">Shop</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/" class="active">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact" class="active">Contact</a></li>
       </ul>
       <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     </div>
   </header>
-
   <!-- Contact Section -->
   <section class="contact-section">
     <div class="container">
       <h1 class="title">Get in Touch</h1>
-      <p class="subtitle">Have questions about our collections or need assistance? Contact Srinikajana Textiles today.
-      </p>
+      <p class="subtitle">Have questions about our collections or need assistance? Contact Srinikajana Textiles today.</p>
 
       <div class="contact-wrapper">
-
         <!-- LEFT SIDE INFO -->
         <div class="contact-info">
           <h2>Contact Information</h2>
@@ -396,8 +351,7 @@
             <i class="fas fa-location-dot"></i>
             <div>
               <h4>Address</h4>
-              <p>GROUND FLOOR, NA, 160/1, <br>Unnamed Road, Palli Durga Mandir,<br>Silabai, Ghatal, Paschim
-                Medinipur,<br>West Bengal, 721212</p>
+              <p>GROUND FLOOR, NA, 160/1,<br>Unnamed Road, Palli Durga Mandir,<br>Silabai, Ghatal, Paschim Medinipur,<br>West Bengal, 721212</p>
             </div>
           </div>
 
@@ -409,11 +363,11 @@
           </div>
         </div>
 
-        <!-- RIGHT SIDE FORM -->
-        <div class="contact-form" id="contactFormContainer">
+        <!-- RIGHT SIDE FORM + THANK YOU IN SAME DIV -->
+        <div class="contact-form">
+          <!-- Form Content -->
           <div id="formContent">
             <h2>Send us a Message</h2>
-
             <form id="contactForm">
               <label>Full Name *</label>
               <input type="text" name="name" required placeholder="Enter your full name">
@@ -437,74 +391,78 @@
             </form>
           </div>
 
-          <!-- Thank You Message (Same Div Mein, Initially Hidden) -->
-          <div id="thankYouContent" style="display: none; text-align: center; padding: 2rem;">
-            <i class="fas fa-check-circle" style="font-size: 5rem; color: #10b981; margin-bottom: 1.5rem;"></i>
-            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #059669; margin-bottom: 1rem;">Thank
-              You!</h2>
-            <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 1rem;">
+          <!-- Thank You Content (Hidden Initially) -->
+          <div id="thankYouContent" style="display: none;">
+            <i class="fas fa-check-circle" style="font-size: 5rem; color: #10b981; margin-bottom: 1.5rem; display: block;"></i>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #059669; margin-bottom: 1rem; text-align: center;">Thank You!</h2>
+            <p style="font-size: 1.2rem; color: var(--gray); text-align: center; margin-bottom: 1rem;">
               Your message has been successfully sent.
             </p>
-            <p style="font-size: 1.1rem; color: var(--primary);">
+            <p style="font-size: 1.1rem; color: var(--primary); text-align: center;">
               We will get back to you within 24 hours via email or phone.
             </p>
-            <a href="index.html"
-              style="display:inline-block; margin-top:2rem; background:var(--accent); color:var(--primary); padding:1rem 2.5rem; text-decoration:none; border-radius:8px; font-weight:600;">
-              Back to Home
-            </a>
+            <div style="text-align: center; margin-top: 2rem;">
+              <a href="index.html" style="display:inline-block; background:var(--accent); color:var(--primary); padding:1rem 2.5rem; text-decoration:none; border-radius:8px; font-weight:600;">
+                Back to Home
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Footer -->
-        <footer>
-          <div class="container footer-grid">
-            <div class="footer-col">
-              <h3>Srinikajana Textiles</h3>
-              <p>Timeless garments for the modern wardrobe.</p>
-            </div>
-            <div class="footer-col">
-              <h3>Quick Links</h3>
-              <a href="/">Home</a>
-              <a href="/#men">Men</a>
-              <a href="/#women">Women</a>
-              <a href="/#products">Shop</a>
-            </div>
-            <div class="footer-col">
-              <h3>Legal</h3>
-              <a href="/privacy/">Privacy Policy</a>
-              <a href="/terms/">Terms & Conditions</a>
-            </div>
-            <div class="footer-col">
-              <h3>Contact</h3>
-              <p><i class="fas fa-phone"></i> +91 74074 95828</p>
-              <p><i class="fas fa-envelope"></i> ashish@srinikajanatextiles.com</p>
-            </div>
-          </div>
-          <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
-            <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
-          </div>
-        </footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Srinikajana Textiles</h3>
+        <p>Timeless garments for the modern wardrobe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="/">Home</a>
+        <a href="/men">Men</a>
+        <a href="/women">Women</a>
+        <a href="/#products">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> +91 74074 95828</p>
+        <p><i class="fas fa-envelope"></i> ashish@srinikajanatextiles.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+      <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
+    </div>
+  </footer>
 
-        <script>
-          const hamburger = document.getElementById('hamburger');
-          const navLinks = document.getElementById('navLinks');
-          hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-          });
+  <script>
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
 
-          // Contact Form Submission - Same Div Mein Thank You
-          document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Form submit nahi hoga
+    // Contact Form Submission → Show Thank You in Same Div
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent actual submission
 
-            // Hide form
-            document.getElementById('formContent').style.display = 'none';
+      // Hide the form
+      document.getElementById('formContent').style.display = 'none';
 
-            // Show thank you message
-            document.getElementById('thankYouContent').style.display = 'block';
-          });
-        </script>
-        <script src="/script.js"></script>
+      // Show thank you message
+      document.getElementById('thankYouContent').style.display = 'block';
+    });
+  </script>
+  <script src="/script.js"></script>
 </body>
 
 </html>
