@@ -13,6 +13,7 @@
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
+  <link rel="stylesheet" href="/style.css" />
 
   <style>
     :root {
@@ -191,6 +192,12 @@
   <header>
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
+      <div class="cart-icon">
+        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="/">Home</a></li>
         <li><a href="/#men">Men</a></li>
@@ -278,5 +285,6 @@
       hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
   </script>
+  <script src="/script.js"></script>
 </body>
 </html>

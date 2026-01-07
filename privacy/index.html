@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Srinikajana Textiles</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
+  <link rel="stylesheet" href="/style.css" />
 
   <style>
     :root {
@@ -22,7 +26,11 @@
       --gray: #666;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -40,10 +48,11 @@
 
     header {
       position: fixed;
-      top: 0; width: 100%;
+      top: 0;
+      width: 100%;
       background: white;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
@@ -60,7 +69,9 @@
       color: var(--primary);
     }
 
-    .logo span { color: var(--accent); }
+    .logo span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -76,9 +87,15 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active {
+      color: var(--accent);
+    }
 
-    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
 
     .privacy-hero {
       margin-top: 40px;
@@ -167,26 +184,63 @@
       margin-bottom: 3rem;
     }
 
-    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+    .footer-col h3 {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
 
-    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
 
-    .footer-col a:hover { color: var(--accent); }
+    .footer-col a:hover {
+      color: var(--accent);
+    }
 
     @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; }
-      .nav-links.active { left: 0; }
-      .privacy-hero h1 { font-size: 2.8rem; }
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .privacy-hero h1 {
+        font-size: 2.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <header>
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
+      <div class="cart-icon">
+        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="/">Home</a></li>
         <li><a href="/#men">Men</a></li>
@@ -213,16 +267,21 @@
     <div class="container">
       <div class="privacy-section">
         <h2>1. Introduction</h2>
-        <p>Srinikajana Textiles ("we," "us," or "our") respects your privacy and is dedicated to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.</p>
+        <p>Srinikajana Textiles ("we," "us," or "our") respects your privacy and is dedicated to protecting your
+          personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
+          you visit our website or make a purchase.</p>
       </div>
 
       <div class="privacy-section">
         <h2>2. Information We Collect</h2>
         <p>We may collect the following types of information:</p>
         <ul>
-          <li><strong>Personal Information:</strong> Name, email address, phone number, shipping/billing address, and payment details when you place an order or create an account.</li>
-          <li><strong>Usage Data:</strong> Information about how you interact with our website (e.g., IP address, browser type, pages visited, and time spent).</li>
-          <li><strong>Cookies & Tracking Data:</strong> We use cookies to enhance your experience and analyze site traffic.</li>
+          <li><strong>Personal Information:</strong> Name, email address, phone number, shipping/billing address, and
+            payment details when you place an order or create an account.</li>
+          <li><strong>Usage Data:</strong> Information about how you interact with our website (e.g., IP address,
+            browser type, pages visited, and time spent).</li>
+          <li><strong>Cookies & Tracking Data:</strong> We use cookies to enhance your experience and analyze site
+            traffic.</li>
         </ul>
       </div>
 
@@ -249,7 +308,8 @@
 
       <div class="privacy-section">
         <h2>5. Data Security</h2>
-        <p>We implement industry-standard security measures (SSL encryption, secure servers) to protect your data. However, no method of transmission over the internet is 100% secure.</p>
+        <p>We implement industry-standard security measures (SSL encryption, secure servers) to protect your data.
+          However, no method of transmission over the internet is 100% secure.</p>
       </div>
 
       <div class="privacy-section">
@@ -269,14 +329,15 @@
 
       <div class="privacy-section">
         <h2>7. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated
+          "Last Updated" date.</p>
       </div>
 
       <div class="privacy-section">
         <h2>8. Contact Us</h2>
         <p>For any questions about this Privacy Policy, please contact:</p>
         <p><strong>Email:</strong> ashish@srinikajanatextiles.com<br>
-        <strong>Phone:</strong> +91 74074 95828<br>
+          <strong>Phone:</strong> +91 74074 95828<br>
         </p>
       </div>
     </div>
@@ -292,8 +353,8 @@
       <div class="footer-col">
         <h3>Quick Links</h3>
         <a href="/">Home</a>
-        <a href="/#men">Men</a>
-        <a href="/#women">Women</a>
+        <a href="/men/">Men</a>
+        <a href="/women/">Women</a>
         <a href="/#products">Shop</a>
       </div>
       <div class="footer-col">
@@ -320,5 +381,7 @@
       hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
   </script>
+  <script src="/script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkout - Srinikajana Textiles</title>
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Same head -->
+  <style>
+    .checkout-form {
+      max-width: 600px;
+      margin: 150px auto;
+      padding: 3rem;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    input, select { width: 100%; padding: 1rem; border: 1px solid #ddd; }
+    .btn-pay {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Srinikajana<span>Textiles</span></div>
+      <div class="cart-icon">
+        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/men/">Men</a></li>
+        <li><a href="/women/">Women</a></li>
+        <li><a href="#products">Shop All</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <div class="checkout-form container">
+    <h1 style="text-align:center; margin-bottom:2rem;">Checkout</h1>
+    <form>
+      <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+      <div class="form-group"><input type="email" placeholder="Email" required></div>
+      <div class="form-group"><input type="tel" placeholder="Phone" required></div>
+      <div class="form-group"><textarea placeholder="Address" rows="4" required></textarea></div>
+      <div class="form-group"><select><option>Cash on Delivery</option><option>UPI / Card (Coming Soon)</option></select></div>
+      <button type="submit" class="btn-pay">Place Order</button>
+    </form>
+    <p style="text-align:center; margin-top:2rem; color:var(--gray);">Your order will be confirmed via WhatsApp/Call.</p>
+  </div>
+
+  <!-- Footer -->
+    <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Srinikajana Textiles</h3>
+        <p>Timeless garments for the modern wardrobe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="/">Home</a>
+        <a href="/men/">Men</a>
+        <a href="/women/">Women</a>
+        <a href="#products">Shop All</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> +91 74074 95828</p>
+        <p><i class="fas fa-envelope"></i> ashish@srinikajanatextiles.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
+      <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
+    </div>
+  </footer>
+   <script src="/script.js"></script>
+</body>
+
+</html>
