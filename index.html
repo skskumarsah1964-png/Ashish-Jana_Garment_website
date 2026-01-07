@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Srinikajana Textiles - Premium Garments for Men & Women</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Favicon (you can replace with your own) -->
+  <!-- Favicon -->
   <link rel="icon" href="https://i.etsystatic.com/35399560/r/il/c099b2/4349387198/il_570xN.4349387198_k4mh.jpg">
 
   <style>
     :root {
-      --primary: #1a1a1a;     /* Deep black for elegance */
-      --accent: #d4af37;      /* Gold accent for premium feel */
+      --primary: #1a1a1a;
+      --accent: #d4af37;
       --light: #f8f8f8;
       --gray: #666;
       --dark-gray: #333;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -42,10 +49,11 @@
     /* Navbar */
     header {
       position: fixed;
-      top: 0; width: 100%;
+      top: 0;
+      width: 100%;
       background: white;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
@@ -62,7 +70,9 @@
       color: var(--primary);
     }
 
-    .logo span { color: var(--accent); }
+    .logo span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -77,15 +87,22 @@
       transition: color 0.3s;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
 
-    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
 
     /* Hero */
     .hero {
       margin-top: 100px;
       height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/hero-gar-Picsart-AiImageEnhancer.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/hero-gar-Picsart-AiImageEnhancer.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       text-align: center;
@@ -109,13 +126,16 @@
       color: var(--primary);
       padding: 1rem 2.5rem;
       border: none;
-      border-radius: 0;
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .btn-primary:hover { background: #b8972b; }
+    .btn-primary:hover {
+      background: #b8972b;
+    }
 
     /* Categories */
     .categories {
@@ -141,6 +161,12 @@
       overflow: hidden;
       height: 600px;
       border-radius: 0;
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .cat-card:hover {
+      transform: scale(1.03);
     }
 
     .cat-card img {
@@ -150,7 +176,9 @@
       transition: transform 0.6s;
     }
 
-    .cat-card:hover img { transform: scale(1.1); }
+    .cat-card:hover img {
+      transform: scale(1.1);
+    }
 
     .cat-overlay {
       position: absolute;
@@ -158,15 +186,31 @@
       left: 0;
       width: 100%;
       padding: 3rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
       color: white;
       text-align: center;
+      transition: 0.4s;
     }
 
     .cat-overlay h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
+    }
+
+    .view-btn {
+      margin-top: 1rem;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .cat-card:hover .view-btn {
+      opacity: 1;
     }
 
     /* Products */
@@ -183,11 +227,13 @@
     .prod-card {
       background: white;
       overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       transition: 0.4s;
     }
 
-    .prod-card:hover { transform: translateY(-10px); }
+    .prod-card:hover {
+      transform: translateY(-10px);
+    }
 
     .prod-card img {
       width: 100%;
@@ -200,9 +246,32 @@
       text-align: center;
     }
 
-    .prod-info h4 { margin-bottom: 0.5rem; }
+    .prod-info h4 {
+      margin-bottom: 0.5rem;
+    }
 
-    .price { font-weight: 600; color: var(--accent); }
+    .price {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .btn-add-cart {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .btn-add-cart:hover {
+      background: #b8972b;
+      transform: translateY(-2px);
+    }
 
     /* Footer */
     footer {
@@ -218,36 +287,100 @@
       margin-bottom: 3rem;
     }
 
-    .footer-col h3 { margin-bottom: 1.5rem; color: var(--accent); }
+    .footer-col h3 {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
 
-    .footer-col a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.8rem; }
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
 
-    .footer-col a:hover { color: var(--accent); }
+    .footer-col a:hover {
+      color: var(--accent);
+    }
 
     /* Mobile */
     @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; align-items: center; padding-top: 3rem; transition: 0.4s; color: var(--primary); }
-      .nav-links.active { left: 0; }
-      .hero-content h1 { font-size: 2.8rem; }
-      .cat-grid { grid-template-columns: 1fr; }
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
+
+    /* =============> card logo button css <============= */
+    .cart-icon {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: 0.8rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <header>
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
+      <div class="cart-icon">
+        <a href="/card/" style="color: var(--primary); font-size: 1.8rem; position: relative;">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="#men">Men</a></li>
-        <li><a href="#women">Women</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
         <li><a href="#products">Shop All</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+      
       <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     </div>
   </header>
@@ -257,91 +390,59 @@
     <div class="container hero-content">
       <h1>Timeless Elegance Redefined</h1>
       <p>Premium garments crafted with precision for the modern man and woman.</p>
-      <button class="btn-primary">Shop Collection</button>
+      <a href="#products" class="btn-primary">Shop Collection</a>
     </div>
   </section>
 
-<grok-card data-id="71f113" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="8b97ee" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="665dfc" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="8ff163" data-type="image_card"></grok-card>
-
-
-  <!-- Categories -->
+  <!-- Men's Collection -->
   <section class="categories" id="men">
     <div class="container">
       <h2 class="section-title">Men's Collection</h2>
       <div class="cat-grid">
-        <div class="cat-card">
+        <a href="/men/" class="cat-card">
           <img src="./images/men-c1.jpg" alt="Men's Collection">
           <div class="cat-overlay">
             <h3>Men's Wear</h3>
             <p>Sophisticated shirts, jackets, and tailored essentials.</p>
+            <div class="view-btn">View Collection →</div>
           </div>
-        </div>
-        <div class="cat-card">
+        </a>
+        <a href="/men/" class="cat-card">
           <img src="./images/men-c2.jpg" alt="Men's Premium">
           <div class="cat-overlay">
             <h3>Premium Line</h3>
             <p>Luxury fabrics for the discerning gentleman.</p>
+            <div class="view-btn">View Collection →</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-<grok-card data-id="5a38b6" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="d40c38" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="428462" data-type="image_card"></grok-card>
-
-
+  <!-- Women's Collection -->
   <section class="categories" id="women">
     <div class="container">
       <h2 class="section-title">Women's Collection</h2>
       <div class="cat-grid">
-        <div class="cat-card">
+        <a href="/women/" class="cat-card">
           <img src="./images/women-c1.jpg" alt="Women's Collection">
           <div class="cat-overlay">
             <h3>Women's Wear</h3>
             <p>Elegant dresses, blouses, and timeless pieces.</p>
+            <div class="view-btn">View Collection →</div>
           </div>
-        </div>
-        <div class="cat-card">
+        </a>
+        <a href="/women/" class="cat-card">
           <img src="./images/womenre-c2.jpg" alt="Women's Premium">
           <div class="cat-overlay">
             <h3>Premium Line</h3>
             <p>Exquisite craftsmanship for modern femininity.</p>
+            <div class="view-btn">View Collection →</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
-
-<grok-card data-id="7163d4" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="bb639c" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="1c2f4e" data-type="image_card"></grok-card>
-
 
   <!-- Featured Products -->
   <section class="products" id="products">
@@ -353,6 +454,7 @@
           <div class="prod-info">
             <h4>Classic Oxford Shirt</h4>
             <p class="price">₹4,999</p>
+            <button class="btn-add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="prod-card">
@@ -360,6 +462,7 @@
           <div class="prod-info">
             <h4>Tailored Blazer</h4>
             <p class="price">₹12,999</p>
+            <button class="btn-add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="prod-card">
@@ -367,6 +470,7 @@
           <div class="prod-info">
             <h4>Silk Evening Dress</h4>
             <p class="price">₹15,999</p>
+            <button class="btn-add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="prod-card">
@@ -374,26 +478,12 @@
           <div class="prod-info">
             <h4>Chiffon Blouse</h4>
             <p class="price">₹6,999</p>
+            <button class="btn-add-cart">Add to Cart</button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-<grok-card data-id="efca44" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="c47af5" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="d9f3c0" data-type="image_card"></grok-card>
-
-
-
-<grok-card data-id="780d3b" data-type="image_card"></grok-card>
-
 
   <!-- Footer -->
   <footer>
@@ -404,15 +494,15 @@
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
-        <a href="/">Home</a>
-        <a href="#men">Men</a>
-        <a href="#women">Women</a>
-        <a href="#products">Shop</a>
+        <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="#products">Shop All</a>
       </div>
       <div class="footer-col">
         <h3>Legal</h3>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms & Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
@@ -421,7 +511,7 @@
       </div>
     </div>
     <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #444;">
-      <p>© 2025 Srinikajana Textiles. All rights reserved.</p>
+      <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
     </div>
   </footer>
 
@@ -432,10 +522,36 @@
       navLinks.classList.toggle('active');
       hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
-  </script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.querySelector('.cart-count').textContent = count;
+  }
+
+  document.querySelectorAll('.btn-add-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.prod-card');
+      const title = card.querySelector('h4, h3').textContent;
+      const priceText = card.querySelector('.price').textContent;
+      const price = parseInt(priceText.replace('₹', '').replace(',', ''));
+      const img = card.querySelector('img').src;
+
+      const existingItem = cart.find(item => item.title === title);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ title, price, img, quantity: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${title} added to cart!`);
+    });
+  });
+
+  updateCartCount(); // Page load pe count update
+</script>
 </body>
+
 </html>
-
-
-
-<!-- this website is developed by jitendra Kumar -->
