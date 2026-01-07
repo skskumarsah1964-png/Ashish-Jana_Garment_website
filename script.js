@@ -1,36 +1,46 @@
+// script.js - Common Cart Functionality for All Pages
 
-  const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  function updateCartCount() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.querySelector('.cart-count').textContent = count;
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartCountElement = document.querySelector('.cart-count');
+  if (cartCountElement) {
+    cartCountElement.textContent = count;
   }
+}
 
-  document.querySelectorAll('.btn-add-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.prod-card');
-      const title = card.querySelector('h4, h3').textContent;
-      const priceText = card.querySelector('.price').textContent;
-      const price = parseInt(priceText.replace('₹', '').replace(',', ''));
-      const img = card.querySelector('img').src;
+// Add to Cart Functionality
+document.querySelectorAll('.btn-add-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.prod-card');
+    const title = card.querySelector('h3, h4').textContent.trim();
+    const priceText = card.querySelector('.price').textContent;
+    const price = parseInt(priceText.replace('₹', '').replace(',', ''));
+    const img = card.querySelector('img').src;
 
-      const existingItem = cart.find(item => item.title === title);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ title, price, img, quantity: 1 });
-      }
+    // Check if item already in cart
+    const existingItem = cart.find(item => item.title === title);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ title, price, img, quantity: 1 });
+    }
 
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartCount();
-      alert(`${title} added to cart!`);
-    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+
+    // Nice feedback
+    button.textContent = 'Added!';
+    button.style.background = '#059669';
+    setTimeout(() => {
+      button.textContent = 'Add to Cart';
+      button.style.background = '';
+    }, 1500);
   });
+});
 
-  updateCartCount(); // Page load pe count update
+// Run on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+});
