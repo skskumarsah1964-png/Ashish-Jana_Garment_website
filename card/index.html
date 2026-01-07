@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shopping Cart - Srinikajana Textiles</title>
   <!-- Same head as other pages (fonts, favicon, style) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="/style.css">
   <style>
     /* Same :root, body, header, navbar styles as before */
@@ -14,9 +17,11 @@
     .cart-container {
       padding: 120px 0;
     }
+
     .cart-items {
       margin-bottom: 2rem;
     }
+
     .cart-item {
       display: flex;
       gap: 2rem;
@@ -24,17 +29,20 @@
       border-bottom: 1px solid #eee;
       align-items: center;
     }
+
     .cart-item img {
       width: 100px;
       height: 120px;
       object-fit: cover;
     }
+
     .cart-total {
       text-align: right;
       font-size: 1.5rem;
       font-weight: bold;
       margin: 2rem 0;
     }
+
     .btn-checkout {
       background: var(--accent);
       color: var(--primary);
@@ -45,9 +53,10 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Same Navbar as other pages -->
-   <!-- Navbar -->
+  <!-- Navbar -->
   <header>
     <div class="container navbar">
       <div class="logo">Srinikajana<span>Textiles</span></div>
@@ -65,14 +74,15 @@
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
-      
+
       <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
   <section class="cart-container">
     <div class="container">
-      <h1 style="font-family: 'Playfair Display'; font-size: 3rem; text-align: center; margin-bottom: 3rem;">Your Cart</h1>
+      <h1 style="font-family: 'Playfair Display'; font-size: 3rem; text-align: center; margin-bottom: 3rem;">Your Cart
+      </h1>
       <div class="cart-items" id="cartItems"></div>
       <div class="cart-total">Total: ₹<span id="totalAmount">0</span></div>
       <div style="text-align: right;">
@@ -82,7 +92,7 @@
   </section>
 
   <!-- Footer -->
-    <footer>
+  <footer>
     <div class="container footer-grid">
       <div class="footer-col">
         <h3>Srinikajana Textiles</h3>
@@ -110,20 +120,29 @@
       <p>© 2026 Srinikajana Textiles. All rights reserved.</p>
     </div>
   </footer>
-
   <script>
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const cartItemsDiv = document.getElementById('cartItems');
     const totalAmount = document.getElementById('totalAmount');
 
+    // Yeh function add kar do - yeh navbar badge update karega
+    function updateCartCount() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartCountElement = document.querySelector('.cart-count');
+      if (cartCountElement) {
+        cartCountElement.textContent = count;
+      }
+    }
+
     function renderCart() {
       cartItemsDiv.innerHTML = '';
       let total = 0;
 
       if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<p style="text-align:center; font-size:1.2rem;">Your cart is empty.</p>';
+        cartItemsDiv.innerHTML = '<p style="text-align:center; font-size:1.2rem; color:var(--gray);">Your cart is empty.</p>';
         totalAmount.textContent = '0';
+        updateCartCount(); // Empty cart mein bhi update
         return;
       }
 
@@ -133,22 +152,23 @@
         const itemDiv = document.createElement('div');
         itemDiv.className = 'cart-item';
         itemDiv.innerHTML = `
-          <img src="${item.img}" alt="${item.title}">
-          <div style="flex:1;">
-            <h3>${item.title}</h3>
-            <p>₹${item.price} × ${item.quantity}</p>
-          </div>
-          <div>
-            <button onclick="changeQuantity(${index}, -1)">-</button>
-            <span style="margin:0 1rem;">${item.quantity}</span>
-            <button onclick="changeQuantity(${index}, 1)">+</button>
-            <button onclick="removeItem(${index})" style="margin-left:1rem; color:red;">Remove</button>
-          </div>
-        `;
+        <img src="${item.img}" alt="${item.title}">
+        <div style="flex:1;">
+          <h3>${item.title}</h3>
+          <p>₹${item.price.toLocaleString()} × ${item.quantity}</p>
+        </div>
+        <div>
+          <button onclick="changeQuantity(${index}, -1)" style="padding:0.5rem 1rem;">-</button>
+          <span style="margin:0 1rem; font-weight:bold;">${item.quantity}</span>
+          <button onclick="changeQuantity(${index}, 1)" style="padding:0.5rem 1rem;">+</button>
+          <button onclick="removeItem(${index})" style="margin-left:1rem; color:red; background:none; border:none; cursor:pointer;">Remove</button>
+        </div>
+      `;
         cartItemsDiv.appendChild(itemDiv);
       });
 
       totalAmount.textContent = total.toLocaleString();
+      updateCartCount(); // Items render hone ke baad update
     }
 
     function changeQuantity(index, change) {
@@ -158,19 +178,20 @@
       }
       localStorage.setItem('cart', JSON.stringify(cart));
       renderCart();
-      updateCartCount();
     }
 
     function removeItem(index) {
       cart.splice(index, 1);
       localStorage.setItem('cart', JSON.stringify(cart));
       renderCart();
-      updateCartCount();
     }
 
-    renderCart();
-    updateCartCount(); // navbar badge update
+    // Page load pe render aur count update
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+    });
   </script>
   <script src="/script.js"></script>
 </body>
+
 </html>
